@@ -7,10 +7,15 @@ feedback_list = []
 @feedback_bp.route("/feedback", methods=["POST"])
 def feedback():
 
-    data = request.json
+    data = request.get_json()
 
-    feedback_list.append(data["message"])
+    if not data or "message" not in data:
+        return jsonify({"error": "No message provided"}), 400
 
-    print("NEW FEEDBACK:", data["message"])
+    message = data["message"]
+
+    feedback_list.append(message)
+
+    print("NEW FEEDBACK:", message)
 
     return jsonify({"status": "ok"})
