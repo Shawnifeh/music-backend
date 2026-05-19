@@ -3,12 +3,13 @@ from flask import Blueprint, request, jsonify
 search_bp = Blueprint("search", __name__)
 
 songs = [
-    {"id": "1", "name": "Parallel Horizon"},
-    {"id": "2", "name": "Ghost Circuit"},
-    {"id": "3", "name": "CosmicShift"},
-    {"id": "4", "name": "Fading Signals"},
-    {"id": "5", "name": "Wistful IceCave"},
-    {"id": "6", "name": "Song 0"}
+    {"id": "1", "name": "Digital Memory"},
+    {"id": "2", "name": "Parallel Horizon"},
+    {"id": "3", "name": "Ghost Circuit"},
+    {"id": "4", "name": "CosmicShift"},
+    {"id": "5", "name": "Fading Signals"},
+    {"id": "6", "name": "Wistful IceCave"},
+    {"id": "7", "name": "Song 0"}
 ]
 
 @search_bp.route("/search")
